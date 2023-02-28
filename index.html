@@ -15,6 +15,25 @@
 
 <body>
     <div class="wrapper">
+
+        <div class="wrapperCrear">
+            <div class="crearTarea">
+                <form id="creaTarea">
+                    <input type="text" placeholder="Nombre de la tarea" name="nombreTarea">
+
+                    <select name="regPrioridad" id="regPrioridad">
+                        <option value="">Establece prioridad.</option>
+                        <option value="">Urgente</option>
+                        <option value="">Diaria</option>
+                        <option value="">Mensual</option>
+                    </select>
+
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+
+        </div>
+
         <header>
 
             <h1>Gestor de Tareas</h1>
@@ -27,20 +46,6 @@
                 </select>
             </div>
         </header>
-        <div class="wrapperCrear">
-            <div class="crear">
-                <form id="creaTarea">
-                    <input type="text" placeholder="Nombre de la tarea" name="nombreTarea">
-
-                    <select name="regPrioridad" id="regPrioridad">
-                        <option value="">Establece prioridad.</option>
-                    </select>
-
-                    <input type="submit" value="Guardar">
-                </form>
-            </div>
-
-        </div>
 
         <main>
             <div class="div-tareas">
