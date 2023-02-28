@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/modelo.js"></script>
     <title>Tareas</title>
@@ -12,10 +15,89 @@
 
 <body>
     <div class="wrapper">
-        <header></header>
-        <main></main>
+        <header>
+
+            <h1>Gestor de Tareas</h1>
+
+            <div class="buscar">
+                <input type="text" id="buscar" placeholder="Busca tu tarea">
+
+                <select name="buscPrioridad" id="buscPrioridad">
+                    <option value="">Filtrar por prioridad.</option>
+                </select>
+            </div>
+        </header>
+        <div class="wrapperCrear">
+            <div class="crear">
+                <form id="creaTarea">
+                    <input type="text" placeholder="Nombre de la tarea" name="nombreTarea">
+
+                    <select name="regPrioridad" id="regPrioridad">
+                        <option value="">Establece prioridad.</option>
+                    </select>
+
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+
+        </div>
+
+        <main>
+            <div class="div-tareas">
+
+                <section id="toDo">
+
+                    <h2>To Do</h2>
+                    <a href="#">
+                        <div class="create">
+                            <i class="fa-regular fa-plus"></i>
+                        </div>
+                    </a>
+
+                    <article class="tarea">
+                        <h3>Nombre de la tarea</h3>
+                        <a href="">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+                    </article>
+                </section>
+
+                <section id="doing">
+                    <h2>Doing</h2>
+                    <a href="#">
+                        <div class="create">
+                            <i class="fa-regular fa-plus"></i>
+                        </div>
+                    </a>
+                    <article class="tarea">
+                        <h3>Nombre de la tarea</h3>
+                        <a href="">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+                    </article>
+                </section>
+                <section id="done">
+                    <h2>Done</h2>
+                    <a href="#">
+                        <div class="create">
+                            <i class="fa-regular fa-plus"></i>
+                        </div>
+                    </a>
+                    <article class="tarea">
+                        <h3>Nombre de la tarea</h3>
+                        <a href="">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+
+                    </article>
+                </section>
+            </div>
+        </main>
         <footer></footer>
     </div>
+
+
+
     <script src="./js/vista.js"></script>
 </body>
 

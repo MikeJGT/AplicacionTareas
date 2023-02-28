@@ -1,0 +1,194 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handlee&display=swap');
+
+/*
+font-family: 'Dancing Script', cursive;
+font-family: 'Handlee', cursive;
+*/
+:root {
+    --fuente-titulo: 'Handlee', cursive;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    width: 100%;
+    margin: 40px auto;
+    box-shadow: 2px 2px 1px 1px rgba(100, 125, 100, 0.2);
+    border-radius: 15px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: var(--fuente-titulo);
+    color: white;
+    padding: 2px;
+}
+
+header {
+    min-height: 80px;
+    background-color: rgb(16, 220, 220);
+    padding: 5px 0;
+    margin-bottom: 40px;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.wrapperCrear {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #444;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+}
+
+.crear {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: aqua;
+
+}
+
+.buscar {
+    padding: 5px;
+}
+
+
+#buscar {
+    width: 95%;
+    padding: 5px;
+    margin: 0 0 5px 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(100, 125, 100, 0.2);
+}
+
+#buscPrioridad {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(100, 125, 100, 0.2);
+    font-family: var(--fuente-titulo);
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+header input {
+    padding: 2px;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+#toDo,
+#doing,
+#done {
+    width: calc(100% - 10px);
+    /* border: 1px solid #860808; */
+    height: auto;
+    padding: 5px 5px 5px 0;
+    margin-bottom: 3em;
+}
+
+.div-tareas {
+    gap: 10px;
+
+}
+
+.div-tareas section {
+    position: relative;
+}
+
+.div-tareas section a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(16, 220, 220);
+}
+
+.div-tareas section>a {
+    width: 100%;
+}
+
+.div-tareas h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3em;
+    color: rgb(16, 220, 220);
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+}
+
+.tarea,
+.create {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    box-shadow: 2px 2px rgba(100, 125, 100, 0.2);
+    border-top: 2px solid rgba(100, 125, 100, 0.2);
+    border-left: 2px solid rgba(100, 125, 100, 0.2);
+    border-radius: 5px;
+}
+
+.create {
+    justify-content: center;
+    color: rgb(16, 220, 220);
+}
+
+.tarea h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 1em;
+}
+
+@media(min-width: 37.500em) {
+    .wrapper {
+        width: 80%;
+    }
+
+    .buscar {
+        /* background-color: tomato; */
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #buscar {
+        /* background-color: tomato; */
+        width: 70%;
+    }
+
+    #toDo,
+    #doing,
+    #done {
+        width: calc(33.333% - 10px);
+        /* border: 1px solid #860808; */
+        height: 350px;
+        padding: 5px 5px 5px 0;
+    }
+
+    .div-tareas h2 {}
+
+    .div-tareas {
+        display: flex;
+    }
+}
+
+@media(min-width:62.750em) {
+
+    .wrapper {
+        max-width: 62.750em;
+    }
+}
