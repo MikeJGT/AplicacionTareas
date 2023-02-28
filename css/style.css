@@ -53,7 +53,7 @@ header {
     justify-content: center;
     align-items: center;
     z-index: 1;
-    /* display: none; */
+    display: none;
 }
 
 .crearTarea {
@@ -62,7 +62,25 @@ header {
     border-radius: 15px;
     background-color: aqua;
     position: absolute;
+    left: 30%;
+    top: 30%;
+    /* overflow: hidden; */
+}
 
+.crearTarea .salir {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: tomato;
+    color: white;
+    top: -5px;
+    right: 0px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 #creaTarea form {
@@ -86,6 +104,7 @@ header {
     height: auto;
     margin-left: 100px;
     background-color: white;
+    cursor: pointer;
 }
 
 #regPrioridad {
