@@ -10,6 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/modelo.js"></script>
+    <script src="./js/controlador.js"></script>
     <title>Tareas</title>
 </head>
 
@@ -23,9 +24,9 @@
 
                     <select name="regPrioridad" id="regPrioridad">
                         <option value="">Establece prioridad.</option>
-                        <option value="">Urgente</option>
-                        <option value="">Diaria</option>
-                        <option value="">Mensual</option>
+                        <option value="urgente">Urgente</option>
+                        <option value="diaria">Diaria</option>
+                        <option value="mensual">Mensual</option>
                     </select>
 
                     <input type="submit" id='guardar' value="Guardar">
@@ -45,6 +46,9 @@
 
                 <select name="buscPrioridad" id="buscPrioridad">
                     <option value="">Filtrar por prioridad.</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
                 </select>
             </div>
         </header>
@@ -54,49 +58,22 @@
 
                 <section id="toDo">
 
-                    <h2>To Do</h2>
-                    <a href="#" id="plus">
+                    <h2>Crea una tarea</h2>
+                    <a href="#" id="plus1">
                         <div class="create">
                             <i class="fa-regular fa-plus"></i>
                         </div>
                     </a>
 
-                    <article class="tarea">
+                    <!-- <article class="tarea">
                         <h3>Nombre de la tarea</h3>
-                        <a href="">
+                        <a href="" class="delete">
                             <i class="fa-regular fa-trash-can"></i>
                         </a>
-                    </article>
+                    </article> -->
                 </section>
+                <section id="toDo2">
 
-                <section id="doing">
-                    <h2>Doing</h2>
-                    <a href="#" id="plus">
-                        <div class="create">
-                            <i class="fa-regular fa-plus"></i>
-                        </div>
-                    </a>
-                    <article class="tarea">
-                        <h3>Nombre de la tarea</h3>
-                        <a href="">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>
-                    </article>
-                </section>
-                <section id="done">
-                    <h2>Done</h2>
-                    <a href="#" id="plus">
-                        <div class="create">
-                            <i class="fa-regular fa-plus"></i>
-                        </div>
-                    </a>
-                    <article class="tarea">
-                        <h3>Nombre de la tarea</h3>
-                        <a href="">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>
-
-                    </article>
                 </section>
             </div>
         </main>

@@ -20,6 +20,8 @@ font-family: 'Handlee', cursive;
     width: 100%;
     margin: 40px auto;
     box-shadow: 2px 2px 1px 1px rgba(100, 125, 100, 0.2);
+    border-left: 2px solid rgba(100, 125, 100, 0.2);
+    border-top: 2px solid rgba(100, 125, 100, 0.2);
     border-radius: 15px;
     background-color: white;
     overflow: hidden;
@@ -39,7 +41,7 @@ header {
     background-color: rgb(16, 220, 220);
     padding: 5px 0;
     margin-bottom: 40px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 8px 8px;
 
 }
 
@@ -147,13 +149,16 @@ main {
 }
 
 #toDo,
-#doing,
-#done {
+#toDo2 {
     width: calc(100% - 10px);
     /* border: 1px solid #860808; */
-    height: auto;
+
     padding: 5px 5px 5px 0;
     margin-bottom: 3em;
+}
+
+#toDo2 {
+    min-height: 350px;
 }
 
 .div-tareas {
@@ -207,37 +212,6 @@ main {
     font-size: 1em;
 }
 
-@media(min-width: 37.500em) {
-    .wrapper {
-        width: 80%;
-    }
-
-    .buscar {
-        /* background-color: tomato; */
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    #buscar {
-        /* background-color: tomato; */
-        width: 70%;
-    }
-
-    #toDo,
-    #doing,
-    #done {
-        width: calc(33.333% - 10px);
-        /* border: 1px solid #860808; */
-        height: 350px;
-        padding: 5px 5px 5px 0;
-    }
-
-    .div-tareas h2 {}
-
-    .div-tareas {
-        display: flex;
-    }
-}
 
 @media(min-width:62.750em) {
 
