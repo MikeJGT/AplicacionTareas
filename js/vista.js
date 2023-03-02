@@ -31,7 +31,8 @@ guardar.addEventListener('click', (event) => {
         titulo: inp,
         prioridad: sel
     }
-    tareas.push(data);
+    //tareas.push(data);
+    addToLocalStorage(data);
     idGlobal++;
     wrapper.style.display = 'none';
     //console.log('Input Text', sel, inp);
@@ -39,13 +40,7 @@ guardar.addEventListener('click', (event) => {
     pintarUnaTarea(data, tareaSection);
 })
 
-// <article class="tarea">
-// <h3>Nombre de la tarea</h3>
-// <a href="">
-//     <i class="fa-regular fa-trash-can"></i>
-// </a>
-// </article>
-// let borrarId = 1;
+
 function pintarUnaTarea(tarea, pDom) {
     const article = document.createElement('article');
     const h3 = document.createElement('h3');
@@ -56,11 +51,13 @@ function pintarUnaTarea(tarea, pDom) {
     a.dataset.id = tarea.id;
     a.href = '#';
     a.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
-    // borrarId++;
+
     a.addEventListener('click', (event) => {
         console.log('Evento borrar', event.target.parentNode.dataset.id);
         event.currentTarget.parentNode.style.display = 'none';
-        borrar(event.target.parentNode.dataset.id);
+        let lista = getLoclaStorage();
+        borrar(event.target.parentNode.dataset.id, lista);
+        setListaLocalStorage(lista);
     })
     article.appendChild(h3);
     article.appendChild(a);
@@ -80,7 +77,8 @@ function pintarTareas(listaTareas, pDom) {
 
 
 function filtrando(event) {
-    filtrarTareas(event.target.value, tareaSection);
+    let listaTareas = getLoclaStorage();
+    filtrarTareas(event.target.value, listaTareas, tareaSection);
 }
 const filtrar = document.querySelector('#buscPrioridad');
 filtrar.addEventListener('change', filtrando);
@@ -92,7 +90,10 @@ plus.addEventListener('click', crearElemento);
 const inputBuscar = document.querySelector('#buscar');
 inputBuscar.addEventListener('keyup', (event) => {
     console.log(event.target.value)
-    let resul = buscarTarea(event.target.value, tareas);
+    let lista = getLoclaStorage();
+    let resul = buscarTarea(event.target.value, lista);
 
     pintarTareas(resul, tareaSection)
 })
+
+init();
