@@ -1,5 +1,5 @@
 function filtrarTareas(nombreTarea, listaTareas, pDom) {
-    console.log('evento selector', nombreTarea)
+    //console.log('evento selector', nombreTarea)
     let filtradas = listaTareas.filter(tarea => tarea.prioridad === nombreTarea);
     pintarTareas(filtradas, pDom);
     if (nombreTarea === "") {
@@ -13,7 +13,10 @@ function buscarTarea(introducido, listaTareas) {
 }
 
 function borrar(id, array) {
-    array.splice(id - 1, 1);
+    let positionItem = (item) => parseInt(item.id) === parseInt(id);
+    let position = array.findIndex(positionItem);
+    //console.log('Posicion en el array', position);
+    array.splice(position, 1);
 }
 
 function initLocalStorage(listaTareas) {
@@ -42,11 +45,16 @@ function getLoclaStorage() {
 
 function setListaLocalStorage(listaTareas) {
     localStorage.clear();
-    localStorage.setItem('Tareas', JSON.stringify(listaTareas));
+    if (listaTareas === null) {
+        localStorage.setItem('Tareas', JSON.stringify(tareas));
+    } else {
+        localStorage.setItem('Tareas', JSON.stringify(listaTareas));
+    }
 }
 
 function init() {
     let lista = getLoclaStorage();
+    lista = (lista === null) ? [] : lista;
     initLocalStorage(lista);
     pintarTareas(lista, tareaSection)
 }

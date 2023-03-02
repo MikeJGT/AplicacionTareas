@@ -17,10 +17,7 @@ function crearElemento() {
     });
 }
 
-
-
-const guardar = document.querySelector('#guardar');
-guardar.addEventListener('click', (event) => {
+function guardando(event) {
 
     event.preventDefault();
 
@@ -32,13 +29,19 @@ guardar.addEventListener('click', (event) => {
         prioridad: sel
     }
     //tareas.push(data);
+    if (sel === "" || inp === "") {
+        guardando(event);
+    }
     addToLocalStorage(data);
     idGlobal++;
     wrapper.style.display = 'none';
     //console.log('Input Text', sel, inp);
 
     pintarUnaTarea(data, tareaSection);
-})
+}
+
+const guardar = document.querySelector('#guardar');
+guardar.addEventListener('click', guardando);
 
 
 function pintarUnaTarea(tarea, pDom) {
@@ -56,6 +59,8 @@ function pintarUnaTarea(tarea, pDom) {
         console.log('Evento borrar', event.target.parentNode.dataset.id);
         event.currentTarget.parentNode.style.display = 'none';
         let lista = getLoclaStorage();
+        //console.log('Lista antes de borrar', lista);
+        //console.log('Id a borrar', event.target.parentNode.dataset.id)
         borrar(event.target.parentNode.dataset.id, lista);
         setListaLocalStorage(lista);
     })
@@ -89,7 +94,7 @@ plus.addEventListener('click', crearElemento);
 
 const inputBuscar = document.querySelector('#buscar');
 inputBuscar.addEventListener('keyup', (event) => {
-    console.log(event.target.value)
+    //console.log(event.target.value)
     let lista = getLoclaStorage();
     let resul = buscarTarea(event.target.value, lista);
 
