@@ -21,15 +21,16 @@
             <div class="crearTarea">
                 <form id="creaTarea">
                     <input type="text" placeholder="Nombre de la tarea" name="nombreTarea">
+                    <div>
+                        <select name="regPrioridad" id="regPrioridad">
+                            <option value="">Establece prioridad.</option>
+                            <option value="urgente">Urgente</option>
+                            <option value="diaria">Diaria</option>
+                            <option value="mensual">Mensual</option>
+                        </select>
 
-                    <select name="regPrioridad" id="regPrioridad">
-                        <option value="">Establece prioridad.</option>
-                        <option value="urgente">Urgente</option>
-                        <option value="diaria">Diaria</option>
-                        <option value="mensual">Mensual</option>
-                    </select>
-
-                    <input type="submit" id='guardar' value="Guardar">
+                        <input type="submit" id='guardar' value="Guardar">
+                    </div>
                 </form>
                 <div class="salir">
                     <i class="fa-solid fa-xmark"></i>
