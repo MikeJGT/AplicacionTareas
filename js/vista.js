@@ -9,11 +9,15 @@ const salir = document.querySelector('.crearTarea .salir');
 
 function crearElemento() {
     //console.log('Evento', wrapper);
-    wrapper.style.display = 'block';
+    // wrapper.classList.add("center");
+    wrapper.style.display = 'flex';
+    wrapper.style.justifyContent = 'center';
+    wrapper.style.alignItems = 'center';
     //guardar.addEventListener('click', guardarDatos);
     salir.addEventListener('click', () => {
         //console.log(event.target)
         wrapper.style.display = 'none';
+        //wrapper.classList.remove("center");
     });
 }
 
