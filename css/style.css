@@ -29,9 +29,10 @@ font-family: 'Handlee', cursive;
 }
 
 body {
-    background-image: url(../assets/images/hojas.png);
+    background-image: url(../assets/images/hojas.png), url(../assets/images/hojasFlip.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: left bottom, right top;
 }
 
 h1 {
@@ -44,10 +45,9 @@ h1 {
 
 header {
     min-height: 80px;
-    background-color: rgb(16, 220, 220);
+    background-color: rgb(16, 220, 220, 0.7);
     padding: 5px 0;
     margin-bottom: 40px;
-    border-radius: 0 0 8px 8px;
 
 }
 
