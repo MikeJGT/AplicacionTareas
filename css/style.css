@@ -237,10 +237,10 @@ main {
     font-size: 1em;
 }
 
-/* 
-@media(min-width:62.750em) {
+
+@media(max-width:700px) {
 
     .wrapper {
-        max-width: 62.750em;
+        width: 100%;
     }
-} */
+}
