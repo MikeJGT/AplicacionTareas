@@ -105,7 +105,7 @@ header {
 
 #creaTarea input {
     margin: 20px 20px 20px 20px;
-    width: 200px;
+    width: 300px;
     height: auto;
     border-radius: 5px;
     padding: 10px;
@@ -129,7 +129,7 @@ header {
 }
 
 #regPrioridad {
-    width: 200px;
+    width: 300px;
     height: auto;
     padding: 10px;
     /* margin-left: 100px; */
