@@ -1,5 +1,4 @@
 function filtrarTareas(nombreTarea, listaTareas, pDom) {
-    //console.log('evento selector', nombreTarea)
     let filtradas = listaTareas.filter(tarea => tarea.prioridad === nombreTarea);
     pintarTareas(filtradas, pDom);
     if (nombreTarea === "") {
@@ -15,7 +14,6 @@ function buscarTarea(introducido, listaTareas) {
 function borrar(id, array) {
     let positionItem = (item) => parseInt(item.id) === parseInt(id);
     let position = array.findIndex(positionItem);
-    //console.log('Posicion en el array', position);
     array.splice(position, 1);
 }
 
