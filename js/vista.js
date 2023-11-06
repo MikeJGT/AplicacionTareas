@@ -3,8 +3,6 @@ const crear = document.querySelector('.crearTarea');
 const wrapper = document.querySelector('.wrapperCrear');
 const form = document.querySelector('#creaTarea');
 const tareaSection = document.querySelector('#toDo2');
-
-
 const salir = document.querySelector('.crearTarea .salir');
 
 function crearElemento() {
@@ -12,11 +10,8 @@ function crearElemento() {
     wrapper.style.display = 'flex';
     wrapper.style.justifyContent = 'center';
     wrapper.style.alignItems = 'center';
-
     salir.addEventListener('click', () => {
-
         wrapper.style.display = 'none';
-        
     });
 }
 
@@ -31,15 +26,12 @@ function guardando(event) {
         titulo: inp,
         prioridad: sel
     }
-    //tareas.push(data);
     if (sel === "" || inp === "") {
         guardando(event);
     }
     addToLocalStorage(data);
     idGlobal++;
     wrapper.style.display = 'none';
-    //console.log('Input Text', sel, inp);
-
     pintarUnaTarea(data, tareaSection);
 }
 
@@ -59,11 +51,8 @@ function pintarUnaTarea(tarea, pDom) {
     a.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
 
     a.addEventListener('click', (event) => {
-        console.log('Evento borrar', event.target.parentNode.dataset.id);
         event.currentTarget.parentNode.style.display = 'none';
         let lista = getLoclaStorage();
-        //console.log('Lista antes de borrar', lista);
-        //console.log('Id a borrar', event.target.parentNode.dataset.id)
         borrar(event.target.parentNode.dataset.id, lista);
         setListaLocalStorage(lista);
     })
@@ -74,7 +63,6 @@ function pintarUnaTarea(tarea, pDom) {
 
 function pintarTareas(listaTareas, pDom) {
     tareaSection.innerHTML = "";
-
     listaTareas.forEach(tarea => {
         pintarUnaTarea(tarea, pDom);
     });
@@ -90,17 +78,14 @@ function filtrando(event) {
 }
 const filtrar = document.querySelector('#buscPrioridad');
 filtrar.addEventListener('change', filtrando);
-
 plus.addEventListener('click', crearElemento);
 
 
 
 const inputBuscar = document.querySelector('#buscar');
 inputBuscar.addEventListener('keyup', (event) => {
-    //console.log(event.target.value)
     let lista = getLoclaStorage();
     let resul = buscarTarea(event.target.value, lista);
-
     pintarTareas(resul, tareaSection)
 })
 
